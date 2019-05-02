@@ -120,3 +120,35 @@ footer.dark {
   width: 35rem;
   margin-top: 5rem;
 }
+
+/* SKILL SECTION */
+
+#skill .parallax{
+  background-image: url("../img/skill.jpg");
+  text-align: center;
+}
+
+#skill .content {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+#skill .content div{
+  margin-top: 1.5%;
+  font-size: 20px;
+  color: white;
+}
+
+#skill h1{
+  font-size: 60px;
+  color: white;
+  font-family: 'Oswald';
+  text-shadow: 0 4px 2px rgba(0,0,0,0.4),
+               0 8px 12px rgba(0,0,0,0.1),
+               0 16px 22px rgba(0,0,0,0.1);
+  letter-spacing: 4px;
+}
+
+#skill .fab {
+  font-size: 5em;
+}
