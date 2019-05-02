@@ -21,3 +21,37 @@ body, html {
 .nav-link:hover,.nav-link:active{
   color: rgb(145, 235, 12);
 }
+
+/* FOOTER */
+
+footer.dark {
+  padding: 40px 0;
+  width: 100%;
+  background-color: #162035;
+}
+
+.footer-text p {
+  color: #777;
+  font-size: 16px;
+}
+
+.footer-text hr {
+  border-top: 1px solid #8f8f8f;
+}
+
+.footer-links {
+  height: 40px;
+}
+
+.footer-links a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: all ease 300ms;
+}
+
+.footer-links a:hover {
+  color: rgb(145, 235, 12);
+  transition: all ease 300ms;
+  opacity: 0.5;
+}
