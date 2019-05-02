@@ -1,0 +1,23 @@
+body, html {
+  height: 100%;
+}
+
+/* NAVBAR */
+
+.navbar-fixed-top {
+  background-color: #162035;
+}
+
+.nav-link{
+  padding-right: 0;
+  color: white;
+  font-family: 'Roboto Condensed';
+  font-size: 1.15em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 1.5em;
+}
+
+.nav-link:hover,.nav-link:active{
+  color: rgb(145, 235, 12);
+}
