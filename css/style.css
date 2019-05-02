@@ -55,3 +55,68 @@ footer.dark {
   transition: all ease 300ms;
   opacity: 0.5;
 }
+
+/* MAIN SECTION */
+
+#main{
+  background-image: url("../img/main.jpg");
+  text-align: center;
+}
+
+.parallax {
+  opacity: 0.9;
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+#main .content{
+  margin-top: 15%;
+}
+
+#main h1{
+  font-family: 'Oswald';
+  color: white;
+  font-size: 85px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 3px rgba(0,0,0,0.6),
+               0 8px 13px rgba(0,0,0,0.3),
+               0 18px 23px rgba(0,0,0,0.2);
+}
+
+#main p{
+  display: inline-block;
+  font-family: 'Oswald';
+  letter-spacing: 1.5px;
+  font-size: 1.75rem;
+  margin: auto;
+  padding: 3px 5px;
+  border-radius: 5px;
+  text-transform: uppercase;  
+}
+
+#main .fab {
+  margin: 1.2em 4px 0 4px;
+  font-size: 40px;
+  color: white;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#main .fab:hover {
+  color: rgb(145, 235, 12);
+}
+
+.pretty-hr {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  width: 35rem;
+  margin-top: 5rem;
+}
