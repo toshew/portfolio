@@ -36,17 +36,39 @@
 
   <div class="container-fluid">
     <div class="tab-content" id="pills-tabContent">
+
       <div class="my-5 tab-pane fade show active" id="pills-pocetna" role="tabpanel" aria-labelledby="pills-pocetna-tab">
 
-  
       </div>
+
       <div class="mt-5 tab-pane fade" id="pills-opis" role="tabpanel" aria-labelledby="pills-opis-tab">
          
       </div>
 
       <div class="my-5 tab-pane fade" id="pills-polaznici" role="tabpanel" aria-labelledby="pills-polaznici-tab">
-        
+        <div id="output">
+          <div class="alert alert-warning d-flex justify-content-between ">
+            <strong class="text-dark align-self-center">LISTA POLAZNIKA</strong>
+            <form class="form-inline ml-auto">
+              <input type="text" id="filter" class="form-control mr-2" placeholder="Pretraga">
+            </form>
+          </div>
+          <table class="table bg-info">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Email</th>
+                <th>Mesto</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
+
     </div>
   </div>
 
