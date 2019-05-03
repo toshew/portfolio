@@ -13,10 +13,19 @@ if (tokenAdmin) {
   document.getElementById('btnDodaj').classList.add('d-inline-block');    
 }
 
+// id
+let id = localStorage.getItem('idPolaznici');
+
+if (!id || localStorage.getItem('polaznici') === null) {
+    id = 100;
+    localStorage.setItem('idPolaznici', id);
+}
+
 // Event listeneri
 document.getElementById('loginBtn').addEventListener('click', login);
 document.getElementById('emailLog').addEventListener('blur', validateEmail);
 document.getElementById('pass').addEventListener('blur', validatePass);
+document.getElementById('sacuvajPolaznika').addEventListener('click', dodajPolaznika);
 
     
 // LOGIN i VALIDACIJA UNOSA
@@ -34,7 +43,6 @@ function login() {
       localStorage.setItem('tokenAdmin', token);
       $('#btnLogin').hide()
       $('#btnLogout, #btnDodaj').show();
-
       location.assign('./index.html');
     } else {
       alert("Pogresan email ili lozinka");
@@ -87,4 +95,41 @@ function validatePass() {
     pass.classList.remove('is-invalid');
     passwordCheck = true;
   }
+}
+
+// DODAVANJE POLAZNIKA
+
+function dodajPolaznika(e) {
+  const ime = document.getElementById('ime');
+  const prezime = document.getElementById('prezime');
+  const email = document.getElementById('email');
+  const mesto = document.getElementById('mesto');
+  
+
+  if (ime.value === '' || ime.prezime === '' || ime.email === '' || ime.mesto === '') {
+      alert('Popunite sva polja');
+      return;
+  }
+
+  let noviPolaznik = {
+    id: ++id,
+    ime: ime.value,
+    prezime: prezime.value,
+    email: email.value,
+    mesto: mesto.value
+  }
+
+  kreirajPolaznikaTabela(noviPolaznik);
+
+  // Sacuvaj u LS polaznika i novu vrednost ID-ja
+  sacuvajPolaznikaLS(noviPolaznik);
+  localStorage.setItem('idPolaznici', id);
+
+  // Ocisti inpute
+  ime.value = '';
+  prezime.value = '';
+  email.value = '';
+  mesto.value = '';
+
+  e.preventDefault();
 }
