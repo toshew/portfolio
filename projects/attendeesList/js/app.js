@@ -3,6 +3,7 @@ let emailCheck = false;
 let passwordCheck = false;
 let matching = false;
 const admini = [{email: 'admin@test.com', password: 'admin11@', token: 'fsd5fdh4fg'}];
+const tabela = document.querySelector('#output tbody');
 
 // token
 let tokenAdmin = localStorage.getItem("tokenAdmin");
@@ -42,7 +43,7 @@ function login() {
       token = admini.find(admin => admin.email === email).token;
       localStorage.setItem('tokenAdmin', token);
       $('#btnLogin').hide()
-      $('#btnLogout, #btnDodaj').show();
+      $('#btnLogout, #btnDodaj, tr td:nth-child(6)').show();
       location.assign('./index.html');
     } else {
       alert("Pogresan email ili lozinka");
@@ -145,3 +146,66 @@ const sacuvajPolaznikaLS = (polaznik) => {
   polaznici.push(polaznik);
   localStorage.setItem('polaznici', JSON.stringify(polaznici));
 };
+
+function kreirajPolaznikaTabela(pol) {
+  const tr = document.createElement('tr');
+  tr.className = 'table-warning';
+      
+  const th = document.createElement('th');
+  th.appendChild(document.createTextNode(pol.id));
+  tr.appendChild(th);
+      
+  const td1 = document.createElement('td');
+  td1.appendChild(document.createTextNode(pol.ime));
+  tr.appendChild(td1);
+      
+  const td2 = document.createElement('td');
+  td2.appendChild(document.createTextNode(pol.prezime));
+  tr.appendChild(td2);
+      
+  const td3 = document.createElement('td');
+  td3.appendChild(document.createTextNode(pol.email));
+  tr.appendChild(td3);
+      
+  const td4 = document.createElement('td');
+  td4.appendChild(document.createTextNode(pol.mesto));
+  tr.appendChild(td4);
+
+  const td5 = document.createElement('td');
+  td5.className = 'd-flex justify-content-around';
+  
+  // Kreiramo link za editovanje
+  const aEdit = document.createElement('a');
+  aEdit.className = 'edit-item';
+
+  const dataAtt1 = document.createAttribute("data-toggle");
+  dataAtt1.value = "modal";
+  aEdit.setAttributeNode(dataAtt1);
+
+  const hrefAtt1 = document.createAttribute("href");
+  hrefAtt1.value = "#editModal";
+  aEdit.setAttributeNode(hrefAtt1);
+
+  aEdit.innerHTML = '<i class="fas fa-pen"></>';
+  td5.appendChild(aEdit);
+  
+  
+  // Kreiramo link za brisanje
+  const aDelete = document.createElement('a'); 
+  aDelete.className = 'delete-item';
+  
+  const hrefAtt2 = document.createAttribute("href");
+  hrefAtt2.value = "#";
+  aDelete.setAttributeNode(hrefAtt2);                
+ 
+  aDelete.innerHTML = '<i class="fas fa-trash"></>';
+  td5.appendChild(aDelete);
+
+  tr.appendChild(td5);
+  
+  tabela.appendChild(tr);
+
+  if (!tokenAdmin) {
+    $(".edit-item, .delete-item").hide()
+  }
+}
