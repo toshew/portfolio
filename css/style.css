@@ -224,3 +224,45 @@ footer.dark {
   position: relative;
   text-decoration: none;
 }
+
+/* CONTACT SECTION */
+
+#contact .parallax {
+  text-align: center;
+  background: url("../img/contact.jpg");
+  color: #282E34;
+  color: #162035;
+}
+
+#contact .content{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-family: 'Oswald';
+}
+
+#contact h1 {
+  font-size: 50px;
+  margin-bottom: 1%;
+  text-shadow: 0 4px 2px rgba(0,0,0,0.4),
+               0 8px 12px rgba(0,0,0,0.1),
+               0 16px 22px rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+}
+
+#contact p {
+  font-family: 'Merriweather';
+  font-size: 20px;
+  width: 60%;
+  margin: 5% auto 0 auto;
+}
+
+#contact .parallax .content .row {
+  width: 80%;
+  margin: 18px auto 0 auto;
+}
+
+#contact .parallax .content .row p{
+    margin-top: 5px;
+    font-family: 'Merriweather';
+    font-size: 16px;
+}
