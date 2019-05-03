@@ -1,0 +1,8 @@
+body {
+  background: url('../img/background.jpg');
+}
+
+.nav-pills .nav-link.active, .nav-pills.show > .nav-link {
+  color: rgb(250, 235, 23);
+  background-color: rgb(4, 138, 138);
+}
