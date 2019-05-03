@@ -6,3 +6,11 @@ body {
   color: rgb(250, 235, 23);
   background-color: rgb(4, 138, 138);
 }
+
+.delete-item i {
+  color: red;
+}
+
+.edit-item i {
+  color: blue;
+}
