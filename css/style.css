@@ -139,7 +139,7 @@ footer.dark {
   color: white;
 }
 
-#skill h1{
+#skill h1, #projects h1{
   font-size: 60px;
   color: white;
   font-family: 'Oswald';
@@ -151,4 +151,76 @@ footer.dark {
 
 #skill .fab {
   font-size: 5em;
+}
+
+
+/* PROJECTS SECTION */
+
+#projects {
+  background-color: #3f51b5;
+}
+
+.project {
+  margin-bottom: 30px;
+}
+
+.project img {
+  width: 100%;
+  transition: all ease 300ms;
+}
+
+.project-inner {
+  box-shadow: 0 28px 25px -25px rgba(0,0,0,.7);
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.project-inner:hover .project-link {
+  background-color: rgba(0,0,0,.8);
+  opacity: 1;
+}
+
+.project-inner .project-link a {
+  opacity: 0;
+  transition: all 400ms ease;
+  top: 70%;
+}
+
+.project-inner:hover .project-link a {
+  opacity: 1;
+  top: 40%;
+}
+
+.project-link {
+  display: table-cell;
+  height: 100%;
+  opacity: 0;
+  padding: 0 15px;
+  position: absolute;
+  text-align: center;
+  transition: all 300ms ease;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.project-link i,
+.project-link p,
+.project-link a {
+  color: #fff;
+}
+
+.project-link p {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.project-link a {
+  display: block;
+  font-size: 20px;
+  position: relative;
+  text-decoration: none;
 }
