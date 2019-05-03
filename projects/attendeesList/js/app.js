@@ -9,7 +9,8 @@ let tokenAdmin = localStorage.getItem("tokenAdmin");
 
 if (tokenAdmin) {
   document.getElementById('btnLogin').classList.add('d-none');
-  document.getElementById('btnLogout').classList.add('d-inline-block');      
+  document.getElementById('btnLogout').classList.add('d-inline-block');
+  document.getElementById('btnDodaj').classList.add('d-inline-block');    
 }
 
 // Event listeneri
@@ -32,7 +33,7 @@ function login() {
       token = admini.find(admin => admin.email === email).token;
       localStorage.setItem('tokenAdmin', token);
       $('#btnLogin').hide()
-      $('#btnLogout').show();
+      $('#btnLogout, #btnDodaj').show();
 
       location.assign('./index.html');
     } else {
