@@ -133,3 +133,15 @@ function dodajPolaznika(e) {
 
   e.preventDefault();
 }
+
+const sacuvajPolaznikaLS = (polaznik) => {
+  let polaznici;
+  if (localStorage.getItem('polaznici') === null) {
+     polaznici = []; 
+  } else {
+      polaznici = JSON.parse(localStorage.getItem('polaznici'));
+  }
+
+  polaznici.push(polaznik);
+  localStorage.setItem('polaznici', JSON.stringify(polaznici));
+};
