@@ -157,6 +157,43 @@
   </div>
 
 
+<!-- Izmeni polaznika modal -->
+<div id="editModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">						
+          <h4 class="modal-title">Izmeni polaznika</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">					
+          <div class="form-group">
+            <label>Ime</label>
+            <input id="imeEdit" type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Prezime</label>
+            <input id="prezimeEdit" type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input id="emailEdit" type="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Mesto</label>
+            <input id="mestoEdit" type="text" class="form-control" required>
+          </div>					
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Otkazi">
+          <button class="btn btn-info" data-dismiss="modal" id="btnIzmeni">Sacuvaj izmene</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
