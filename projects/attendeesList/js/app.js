@@ -27,6 +27,8 @@ document.getElementById('loginBtn').addEventListener('click', login);
 document.getElementById('emailLog').addEventListener('blur', validateEmail);
 document.getElementById('pass').addEventListener('blur', validatePass);
 document.getElementById('sacuvajPolaznika').addEventListener('click', dodajPolaznika);
+document.getElementById('filter').addEventListener('keyup', mojFilter);
+tabela.addEventListener('click', izbrisiPolaznika);
 
 
 ispisiPolaznike();
@@ -247,4 +249,22 @@ function izbrisiPolaznika(e) {
       izbrisiIzLS(tr);
     }           
   }
+}
+
+// Izbrisi polaznika iz ls
+const izbrisiIzLS = (tr) => {
+  let polaznici;
+  if (localStorage.getItem('polaznici') === null) {
+      polaznici = []; 
+  } else {
+      polaznici = JSON.parse(localStorage.getItem('polaznici'));
+  }
+
+  polaznici.forEach((polaznik, index) => {
+      if (tr.firstChild.textContent == polaznik.id) {
+          polaznici.splice(index, 1); 
+      }
+  }); 
+
+ localStorage.setItem('polaznici', JSON.stringify(polaznici));
 }
