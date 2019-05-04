@@ -151,7 +151,7 @@ footer.dark {
   letter-spacing: 1px;
 }
 
-#about span {
+#about span, #about em {
 color: rgb(65, 56, 112);
 font-weight: bold;
 }
