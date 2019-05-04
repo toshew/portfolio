@@ -303,6 +303,22 @@ font-weight: bold;
     font-size: 16px;
 }
 
+/* Backtop button */
+
+#backTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
 @media (max-width: 768px) {
   #skill .col-sm-6.col-lg-3 {
     margin-top: 5%!important;
