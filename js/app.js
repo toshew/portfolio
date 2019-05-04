@@ -43,7 +43,7 @@ let translations = {
     aboutSec: 'O MENI',
     contactSec: "Budimo u kontaktu",
     contactPar: 'Pozovite me ili pošaljite email i ja ću Vam odgovoriti u najkraćem roku!',
-    aboutPar: `Ja sam <em>Junior JavaScript Programer</em> koji uživa u programiranju i <span>razvoj</span>u web aplikacije. JavaScript je samo početak mog <span>put</span>a u programiranju, jer <span>plan</span>iram da naučim više programskih jezika u <span>budućnost</span>i. Ja sam i veoma <span>motiv</span>isan i stalno eksperimentišem sa novim <span>tehnologija</span>ma i tehnikama. Veoma sam <span>strastven</span> u vezi sa Web Development-om i nastojim da se poboljšam kao programer.<br><br><em>Sposoban da radi samostalno i kao deo tima;<em><br><em>Odlučan, vredan i odgovoran;<em><br><em>Motivisan da konstantno uči i razvija se.<em>`
+    aboutPar: `Ja sam <em>Junior JavaScript Programer</em> koji uživa u programiranju i <span>razvoj</span>u web aplikacije. JavaScript je samo početak mog <span>put</span>a u programiranju, jer <span>plan</span>iram da naučim više programskih jezika u <span>budućnost</span>i. Ja sam i veoma <span>motiv</span>isan i stalno eksperimentišem sa novim <span>tehnologija</span>ma i tehnikama. Veoma sam <span>posvećen</span> u vezi sa Web Development-om i nastojim da se poboljšam kao programer.<br><br><em>Sposoban da radi samostalno i kao deo tima;<em><br><em>Odlučan, vredan i odgovoran;<em><br><em>Motivisan da konstantno uči i razvija se.<em>`
   }
 }
 
