@@ -1,4 +1,4 @@
-// Smooth scrolling for all links
+// Smooth scrolling
 $(document).ready(function(){
   $("a").on('click', function(event) {
     if (this.hash !== "") {
@@ -11,3 +11,14 @@ $(document).ready(function(){
     } 
   });
 });
+
+//Back top button
+window.onscroll = function() {scrollFunction()};
+
+let scrollFunction = () => {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backTopBtn").style.display = "none";
+  }
+}
