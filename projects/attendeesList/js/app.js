@@ -279,3 +279,41 @@ const izbrisiIzLS = (tr) => {
 
  localStorage.setItem('polaznici', JSON.stringify(polaznici));
 }
+
+// Izmeni polaznika
+function izmeniPolaznika(e) {
+  if (e.target.parentElement.classList.contains('edit-item')) {
+    let tr = e.target.parentElement.parentElement.parentElement;
+    document.getElementById('imeEdit').value = tr.childNodes[1].textContent;
+    document.getElementById('prezimeEdit').value = tr.childNodes[2].textContent;
+    document.getElementById('emailEdit').value = tr.childNodes[3].textContent;
+    document.getElementById('mestoEdit').value = tr.childNodes[4].textContent;
+
+    document.getElementById('btnIzmeni').addEventListener('click', sacuvajIzmene);
+
+    let polaznici;
+    if (localStorage.getItem('polaznici') === null) {
+      polaznici = [];
+    } else {
+      polaznici = JSON.parse(localStorage.getItem('polaznici'));
+    }
+
+    let indexEdit = polaznici.findIndex(polaznik => tr.childNodes[0].textContent == polaznik.id);
+
+    function sacuvajIzmene() {
+      polaznici[indexEdit].ime = document.getElementById('imeEdit').value;
+      polaznici[indexEdit].prezime = document.getElementById('prezimeEdit').value;
+      polaznici[indexEdit].email = document.getElementById('emailEdit').value;
+      polaznici[indexEdit].mesto = document.getElementById('mestoEdit').value;
+
+      localStorage.setItem('polaznici', JSON.stringify(polaznici));
+      
+      // cisti tabelu
+      while (tabela.firstChild) {
+        tabela.removeChild(tabela.firstChild);
+      }
+
+      ispisiPolaznike();
+    }
+  }
+}
