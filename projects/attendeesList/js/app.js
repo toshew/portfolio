@@ -28,6 +28,8 @@ document.getElementById('emailLog').addEventListener('blur', validateEmail);
 document.getElementById('pass').addEventListener('blur', validatePass);
 document.getElementById('sacuvajPolaznika').addEventListener('click', dodajPolaznika);
 
+
+ispisiPolaznike();
     
 // LOGIN i VALIDACIJA UNOSA
 
@@ -208,4 +210,16 @@ function kreirajPolaznikaTabela(pol) {
   if (!tokenAdmin) {
     $(".edit-item, .delete-item").hide()
   }
+}
+
+// Ispisi polaznike
+function ispisiPolaznike() {
+  let polaznici;
+  if (localStorage.getItem('polaznici') === null) {
+     polaznici = []; 
+  } else {
+      polaznici = JSON.parse(localStorage.getItem('polaznici'));
+  }
+
+  polaznici.forEach(polaznik => kreirajPolaznikaTabela(polaznik));
 }
