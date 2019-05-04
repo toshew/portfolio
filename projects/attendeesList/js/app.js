@@ -29,6 +29,7 @@ document.getElementById('pass').addEventListener('blur', validatePass);
 document.getElementById('sacuvajPolaznika').addEventListener('click', dodajPolaznika);
 document.getElementById('filter').addEventListener('keyup', mojFilter);
 tabela.addEventListener('click', izbrisiPolaznika);
+document.getElementById('btnLogout').addEventListener('click', logout);
 
 
 ispisiPolaznike();
@@ -100,6 +101,16 @@ function validatePass() {
     pass.classList.remove('is-invalid');
     passwordCheck = true;
   }
+}
+
+// LOGOUT
+function logout() {
+  $('#btnLogin').show()
+  $('#btnDodaj, #btnLogout, tr td:nth-child(6)').hide()
+  
+  tokenAdmin = '';
+  localStorage.removeItem('tokenAdmin');
+  location.assign('./index.html');
 }
 
 // DODAVANJE POLAZNIKA
