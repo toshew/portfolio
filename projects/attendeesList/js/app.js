@@ -29,6 +29,7 @@ document.getElementById('pass').addEventListener('blur', validatePass);
 document.getElementById('sacuvajPolaznika').addEventListener('click', dodajPolaznika);
 document.getElementById('filter').addEventListener('keyup', mojFilter);
 tabela.addEventListener('click', izbrisiPolaznika);
+tabela.addEventListener('click', izmeniPolaznika);
 document.getElementById('btnLogout').addEventListener('click', logout);
 
 
