@@ -47,3 +47,21 @@ let translations = {
   }
 }
 
+document.getElementById('top').addEventListener('load', translate);
+document.getElementById('language').addEventListener('change', translate);
+
+function translate() {          
+  let elementsForTranslation = document.querySelectorAll('[data-i18n]');
+  let language = document.getElementById('language').value;
+
+  elementsForTranslation.forEach((element) => {
+    let atributeValue = element.getAttribute('data-i18n');
+    let translation = translations[language][atributeValue];
+    
+    if (translation == null) {
+      translation = atributeValue;
+    }
+
+    element.innerHTML = translation;
+  });
+}
