@@ -223,3 +223,17 @@ function ispisiPolaznike() {
 
   polaznici.forEach(polaznik => kreirajPolaznikaTabela(polaznik));
 }
+
+// Filter / Pretraga
+function mojFilter(e) {
+  const trs = document.querySelectorAll('tbody > tr');
+  const trsArr = [...trs];
+
+  trsArr.forEach(tr => {
+    if (tr.textContent.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
+      tr.style.display = '';
+    } else {
+      tr.style.display = 'none';
+    }
+  });
+}
