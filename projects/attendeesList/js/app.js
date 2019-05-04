@@ -237,3 +237,14 @@ function mojFilter(e) {
     }
   });
 }
+
+// Izbrisi polaznika
+function izbrisiPolaznika(e) {
+  let tr = e.target.parentElement.parentElement.parentElement;
+  if (e.target.parentElement.classList.contains('delete-item')) {
+    if (confirm('Da li si siguran?')) {
+      tr.remove(); 
+      izbrisiIzLS(tr);
+    }           
+  }
+}
