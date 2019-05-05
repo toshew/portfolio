@@ -7,7 +7,9 @@ const plusMinus = document.getElementById('plus-minus');
 
 // Event listeners
 document.body.addEventListener("click", addOnDisplay1);
-showTotal.addEventListener("click", showResult); 
+showTotal.addEventListener("click", showResult);
+plusMinus.addEventListener("click", changeSign);
+btnReset.addEventListener("click", clearDisplay); 
 
 // Functions
 function addOnDisplay1(e) {
@@ -26,4 +28,16 @@ function showResult(e) {
     display.textContent = eval(display1.textContent);
     e.target.blur();
   }        
+}
+
+function changeSign(e) {
+  let num = parseFloat(display1.textContent);
+  display.textContent = -num;
+  e.target.blur();
+}
+
+function clearDisplay(e) {
+  display.textContent = '';
+  display1.textContent = '';
+    e.target.blur();
 }
