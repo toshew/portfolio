@@ -9,7 +9,8 @@ const plusMinus = document.getElementById('plus-minus');
 document.body.addEventListener("click", addOnDisplay1);
 showTotal.addEventListener("click", showResult);
 plusMinus.addEventListener("click", changeSign);
-btnReset.addEventListener("click", clearDisplay); 
+btnReset.addEventListener("click", clearDisplay);
+document.body.addEventListener("keypress", keyboardInput);
 
 // Functions
 function addOnDisplay1(e) {
@@ -39,5 +40,54 @@ function changeSign(e) {
 function clearDisplay(e) {
   display.textContent = '';
   display1.textContent = '';
-    e.target.blur();
+  e.target.blur();
+}
+
+// Keyboard input
+function keyboardInput(key) {
+  if ((key.which < 0 || key.which > 57) && (key.which !== 13)) {
+    return false;
+  } else {
+    key.preventDefault();
+    if (key.which === 48) {
+      display1.textContent += '0';
+    } else if (key.which === 49) {
+      display1.textContent += "1";
+    } else if (key.which === 50) {
+      display1.textContent +="2";
+    } else if (key.which === 51) {
+      display1.textContent += "3";
+    } else if (key.which === 52) {
+      display1.textContent += "4";
+    } else if (key.which === 53) {
+      display1.textContent += "5"
+    } else if (key.which === 54) {
+      display1.textContent += "6";
+    } else if (key.which === 55) {
+      display1.textContent += "7";
+    } else if (key.which === 56) {
+      display1.textContent += "8";
+    } else if (key.which === 57) {
+      display1.textContent += "9";
+    } else if (key.which === 46) {
+      display1.textContent += ".";
+    } else if (key.which === 40) {
+      display1.textContent += "(";
+    } else if (key.which === 41) {
+      display1.textContent += ")";
+    } else if (key.which === 42) {
+      display1.textContent += "*";
+    } else if (key.which === 47) {
+      display1.textContent += "/";
+    } else if (key.which === 43) {
+      display1.textContent += "+";
+    } else if (key.which === 45) {
+      display1.textContent +="-";
+    } else if (key.which === 13) {
+      showResult(key);
+    } else {
+      display1.textContent = display1.textContent;
+    }
+    return true;
+  }
 }
