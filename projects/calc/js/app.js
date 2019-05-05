@@ -11,6 +11,7 @@ showTotal.addEventListener("click", showResult);
 plusMinus.addEventListener("click", changeSign);
 btnReset.addEventListener("click", clearDisplay);
 document.body.addEventListener("keypress", keyboardInput);
+document.body.addEventListener("keydown", backspaceDeleteKeyEvent);
 
 // Functions
 function addOnDisplay1(e) {
@@ -90,4 +91,18 @@ function keyboardInput(key) {
     }
     return true;
   }
+}
+
+// Deleting value using backspace and delete
+function backspaceDeleteKeyEvent (key) {
+  if (key.which === 8) {
+    deleteSingle();
+  } else if (key.which === 46) {
+    clearDisplay(key)
+  }
+}
+// Deleting(backspace) single value
+function deleteSingle() {
+  backspaceValue = display1.textContent;
+  display1.textContent = backspaceValue.substr(0, backspaceValue.length - 1);
 }
