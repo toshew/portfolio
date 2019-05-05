@@ -9,9 +9,53 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  
-
-
+<div class="container">
+  <div class="row mt-1">
+    <div class="col-lg-4 col-md-5 col-sm-6 mx-auto m-0 p-0">
+      <form > 
+        <div class="d-flex flex-column">
+          <div class="pt-4 pr-3 text-right text-muted" id="display1"></div>
+          <div class="d-flex flex-row">
+            <div id="equal-sign" class="pt-4 text-light text-center font-weight-bold w-25">=</div>
+            <div class="py-3 pr-3 text-light text-right w-75"  id="display">
+          </div> 
+        </div>
+            
+        <div class="d-flex flex-column">
+          <div class="d-flex">
+            <input class="btn btn-lg sign font-weight-normal" id="reset" type="button" value="AC">
+            <input class="btn btn-lg sign font-weight-normal" id="plus-minus" type="button" value="+/-">
+            <input class="btn btn-lg unos sign font-weight-normal" type="button" value="%">
+            <input class="btn btn-lg unos sign" type="button" value="*">
+          </div>
+          <div class="d-flex">
+            <input class="btn btn-lg unos" type="button" value="7">
+            <input class="btn btn-lg unos" type="button" value="8">
+            <input class="btn btn-lg unos" type="button" value="9">
+            <input class="btn btn-lg unos sign" type="button" value="/">
+          </div>
+          <div class="d-flex">
+            <input class="btn btn-lg unos" type="button" value="4">
+            <input class="btn btn-lg unos" type="button" value="5">
+            <input class="btn btn-lg unos" type="button" value="6">
+            <input class="btn btn-lg unos sign" type="button" value="-">
+          </div>
+          <div class="d-flex">
+            <input class="btn btn-lg unos" type="button" value="1">
+            <input class="btn btn-lg unos" type="button" value="2">
+            <input class="btn btn-lg unos" type="button" value="3">
+            <input class="btn btn-lg unos sign" type="button" value="+">
+          </div>
+          <div class="d-flex">
+            <input class="btn btn-lg unos w-50" id="zero" type="button" value="0">
+            <input class="btn btn-lg unos" type="button" value=".">
+            <input class="btn btn-lg sign text-light" id="showTotal" type="button" value="=">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
   <script src="./js/app.js"></script>
 </body>
