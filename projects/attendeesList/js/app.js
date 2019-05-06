@@ -2,6 +2,9 @@
 let emailCheck = false;
 let passwordCheck = false;
 let matching = false;
+let imeCheck = false;
+let prezimeCheck = false;
+let mestoCheck = false;
 const admini = [{email: 'admin@test.com', password: 'admin11@', token: 'fsd5fdh4fg'}];
 const tabela = document.querySelector('#output tbody');
 
@@ -26,6 +29,10 @@ if (!id || localStorage.getItem('polaznici') === null) {
 document.getElementById('loginBtn').addEventListener('click', login);
 document.getElementById('emailLog').addEventListener('blur', validateEmail);
 document.getElementById('pass').addEventListener('blur', validatePass);
+document.getElementById('ime').addEventListener('blur', () => {validateText('ime')});
+document.getElementById('prezime').addEventListener('blur', () => {validateText('prezime')});
+document.getElementById('email').addEventListener('blur', () => {validateEmail('email')});
+document.getElementById('mesto').addEventListener('blur', () => {validateText('mesto')});
 document.getElementById('sacuvajPolaznika').addEventListener('click', dodajPolaznika);
 document.getElementById('filter').addEventListener('keyup', mojFilter);
 tabela.addEventListener('click', izbrisiPolaznika);
@@ -78,8 +85,8 @@ document.getElementById('showPass').addEventListener('change', function() {
 });
 
 // Validacija
-function validateEmail() {
-  const email = document.getElementById('emailLog');
+function validateEmail(element) {
+  const email = document.getElementById(element);
   re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
   if (!re.test(email.value)) {
@@ -104,6 +111,37 @@ function validatePass() {
   }
 }
 
+function validateText(element) {
+  const el = document.getElementById(element);
+  const re = /^\D(\D|\s|['.])*$/;                                     
+  switch (element) {
+  case 'ime':
+    if (!re.test(el.value)) {
+      el.classList.add('is-invalid');
+      imeCheck = false;
+    } else {
+      el.classList.remove('is-invalid');
+      imeCheck = true;
+    }
+  case 'prezime':
+    if (!re.test(el.value)) {
+      el.classList.add('is-invalid');
+      prezimeCheck = false;
+    } else {
+      el.classList.remove('is-invalid');
+      prezimeCheck = true;
+    }
+  case 'mesto':
+    if (!re.test(el.value)) {
+      el.classList.add('is-invalid');
+      mestoCheck = false;
+    } else {
+      el.classList.remove('is-invalid');
+      mestoCheck = true;
+    }
+  } 
+}
+
 // LOGOUT
 function logout() {
   $('#btnLogin').show()
@@ -117,38 +155,37 @@ function logout() {
 // DODAVANJE POLAZNIKA
 
 function dodajPolaznika(e) {
-  const ime = document.getElementById('ime');
-  const prezime = document.getElementById('prezime');
-  const email = document.getElementById('email');
-  const mesto = document.getElementById('mesto');
-  
-
-  if (ime.value === '' || ime.prezime === '' || ime.email === '' || ime.mesto === '') {
-      alert('Popunite sva polja');
-      return;
-  }
-
-  let noviPolaznik = {
-    id: ++id,
-    ime: ime.value,
-    prezime: prezime.value,
-    email: email.value,
-    mesto: mesto.value
-  }
-
-  kreirajPolaznikaTabela(noviPolaznik);
-
-  // Sacuvaj u LS polaznika i novu vrednost ID-ja
-  sacuvajPolaznikaLS(noviPolaznik);
-  localStorage.setItem('idPolaznici', id);
-
-  // Ocisti inpute
-  ime.value = '';
-  prezime.value = '';
-  email.value = '';
-  mesto.value = '';
-
   e.preventDefault();
+  if (!imeCheck || !prezimeCheck || !emailCheck || !mestoCheck) {
+    return;
+  } else {
+    const ime = document.getElementById('ime');
+    const prezime = document.getElementById('prezime');
+    const email = document.getElementById('email');
+    const mesto = document.getElementById('mesto');
+
+    let noviPolaznik = {
+      id: ++id,
+      ime: ime.value,
+      prezime: prezime.value,
+      email: email.value,
+      mesto: mesto.value
+    }
+
+    kreirajPolaznikaTabela(noviPolaznik);
+
+    // Sacuvaj u LS polaznika i novu vrednost ID-ja
+    sacuvajPolaznikaLS(noviPolaznik);
+    localStorage.setItem('idPolaznici', id);
+
+    // Ocisti inpute
+    ime.value = '';
+    prezime.value = '';
+    email.value = '';
+    mesto.value = '';
+
+    e.preventDefault();
+  }
 }
 
 const sacuvajPolaznikaLS = (polaznik) => {
