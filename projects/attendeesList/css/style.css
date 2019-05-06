@@ -14,3 +14,39 @@ body {
 .edit-item i {
   color: blue;
 }
+
+#nasaEkipa{
+  padding: 80px 0 80px;
+  text-align: center;
+  background-image: url("../img/keyboard.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#nasaEkipa .container{
+  position: relative;
+  background: rgba(10, 54, 54, 0.6);
+  color:rgb(11, 93, 148);
+}
+
+#nasaEkipa img {
+  margin-top: -50px; }
+
+#nasaEkipa .fab {
+  font-size: 25px;
+  color: #3292a6;
+}
+
+#nasaEkipa .card:hover {
+  background: #3292a6;
+  color: #fff; 
+}
+
+#nasaEkipa .card:hover .fab {
+  color: #fff; 
+}
+
+
+
