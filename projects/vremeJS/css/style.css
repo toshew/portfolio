@@ -1,0 +1,20 @@
+body {
+	background-color: rgb(120, 166, 247);
+	background-image: url('../img/kapi.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	margin: 0 auto;
+	color: white;
+}
+
+/* navbar */
+.navbar {
+	background-color: rgb(31, 86, 180);
+}
+
+.navbar a {
+	color: white;
+	font-size: 25px;
+}
