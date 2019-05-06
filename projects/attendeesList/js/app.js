@@ -318,3 +318,61 @@ function izmeniPolaznika(e) {
     }
   }
 }
+
+
+// Pocetna ispis kartica
+let predavaciUI = [
+  {ime: 'Marija', opis: 'Speed', img: 'img/marija.png', github: 'MarijaStojanovic', linkedin: 'marijastojanovic14'},
+  {ime: 'Aleksandar', opis: 'Nirvana', img: 'img/sale.png'}
+];
+
+let ekipaUI = [
+  {ime: 'Aleksandra', img: 'img/aleks.png'},
+  {ime: 'Darko', img: 'img/darko.png', github: 'darkoRadisavljevic'},
+  {ime: 'Dejan', img: 'img/dejan.png'},
+  {ime: 'Duško', img: 'img/dule.png', github: 'dule69'},
+  {ime: 'Gorana', img: 'img/gorana.png'},
+  {ime: 'Lazar', img: 'img/lazar.png', github: 'lazarVelickovic', linkedin: 'lazar-velickovic-10aa1115a'},
+  {ime: 'Marko', img: 'img/marko.png', github: 'marko83nbg', linkedin: 'markotomasevicbg'},
+  {ime: 'Miloš', img: 'img/milos.png', github: '', linkedin: ''},
+  {ime: 'Nataša', img: 'img/natasa.png', github: 'PetrovicNatasa', linkedin: 'nataša-petrović-875220182'},
+  {ime: 'Nenad', img: 'img/nenad.png', github: 'NenadZivotic', linkedin: 'nenad-zivotic'},
+  {ime: 'Nikola', img: 'img/nikola.png', github: 'NikolaZdravkovic', linkedin: 'nikola-zdravkovic-a0aa44143'},
+  {ime: 'Pedja', img: 'img/pedja.png', github: 'PedjaOljaca', linkedin: 'predrag-oljača-78b7bb168'},
+  {ime: 'Stevan', img: 'img/stevan.png', github: 'NikolicStevan', linkedin: 'stevan-nikolic'},
+  {ime: 'Vladan', img: 'img/sam.jpg', github: 'toshew', linkedin: 'vladan-tosev'},
+  {ime: 'Luka', img: 'img/nikola.png'},
+  {ime: 'Nikola', img: 'img/nikola.png'},
+  {ime: 'Natalija', img: 'img/nikola.png', github: 'NatalijaSt'},
+  {ime: 'Stefan', img: 'img/nikola.png'},
+  {ime: 'Dragan', img: 'img/nikola.png'},
+  {ime: 'Miloš', img: 'img/nikola.png', github: 'Milos-Rancic', linkedin: 'milos-rancic'}
+];
+
+
+const clanEkipePredavac = ({ ime, img, opis = '', github = '', linkedin = '' }) => `
+<div class="col-lg-3 col-md-6 mb-5">
+<div class="card">
+<div class="card-body">
+  <img src="${img}" alt="" class="img-fluid rounded-circle w-50 mb-3">
+  <h3>${ime}</h3>
+  <h5 class="text-muted">${opis}</h5>
+  <div class="d-flex flex-row justify-content-around">
+    <div class="p-4">
+      <a href="https://github.com/${github}">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="p-4">
+      <a href="https://linkedin.com/in/${linkedin}">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+`;
+
+$('#predavaci').html(predavaciUI.map(clanEkipePredavac).join(''));
+$('#ekipa').html(ekipaUI.map(clanEkipePredavac).join(''));
