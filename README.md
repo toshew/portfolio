@@ -21,25 +21,25 @@ HTML, CSS, JavaScript, jQuery i Bootstrap biblioteke
 |   +-- app.js
 +-- projects
 |   +-- attendeesList
-|       +-- css
-|           +-- style.css
-|       +-- img
-|       +-- js
-|           +-- app.js
-|       +-- index.html
+|   |   +-- css
+|   |   |   +-- style.css
+|   |   +-- img
+|   |   +-- js
+|   |   |   +-- app.js
+|   |   +-- index.html
 |   +-- calc
-|       +-- css
-|           +-- style.css
-|       +-- img
-|       +-- js
-|           +-- app.js
-|       +-- index.html
+|   |   +-- css
+|   |   |   +-- style.css
+|   |   +-- img
+|   |   +-- js
+|   |   |   +-- app.js
+|   |   +-- index.html
 |   +-- vremeJS
 |       +-- css
-|           +-- style.css
+|       |   +-- style.css
 |       +-- img
 |       +-- js
-|           +-- app.js
+|       |   +-- app.js
 |       +-- index.html
 +-- index.html
 </pre>
