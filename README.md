@@ -4,7 +4,7 @@
 Lična portfolio stranica u koju su uključena 3 projekta radjena tokom kursa.
 - Calc - kalkulator sa jednostavnim računskim operacijama
 - VremeJS - Aplikacija za prikaz trenutnog vremena po izabranoj lokaciji
-- attendeesList - Lista polaznika JavaScript kursa (CRUD)
+- AttendeesList - Lista polaznika JavaScript kursa (CRUD)
 
 
 ## Tehnologije:
