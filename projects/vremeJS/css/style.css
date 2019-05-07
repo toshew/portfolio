@@ -68,3 +68,7 @@ body {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
+
+.modal {
+	color: rgb(78, 77, 77);
+}

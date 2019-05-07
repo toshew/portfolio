@@ -101,3 +101,13 @@ function getWeather() {
     .then(data => ui.print(data))
     .catch(err => {console.log(err)})
 }
+
+document.getElementById('changeLocationBtn').addEventListener('click', (e) => {
+  const city = document.getElementById('city').value;
+  const state = document.getElementById('state').value;
+    
+  weather.changeLocation(city, state);
+  ls.setLocation(city, state);
+  getWeather();
+  $('#locModal').modal('hide');
+});

@@ -24,7 +24,7 @@
       <div class="col-md-6 col-sm-12 mx-auto weather">
         
           <div class="d-flex flex-column ">
-            <p id="location"></p>
+            <a id="location" href="#locModal" class="text-center mx-auto display-4" data-toggle="modal" ></a>
             <div class="col-6 text-center mx-auto">
               <span id="stringWeather"></span>
               <i class="fas fa-thermometer-three-quarters"></i>			
@@ -62,7 +62,32 @@
     </div>
   </div>
 
-  
+  <!-- Modal -->
+  <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="locModalLabel">Izaberi lokaciju</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formLocation">
+            <div class="form-group">
+              <label for="city">Grad</label>
+              <input type="text" id="city" class="form-control" required>
+              <label for="state">Drzava</label>
+              <input type="text" id="state" class="form-control" required maxlength="2">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="changeLocationBtn" type="button" class="btn btn-primary">Sacuvaj promene</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
