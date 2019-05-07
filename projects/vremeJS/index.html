@@ -18,6 +18,50 @@
     <span id="date" class="lead"></span>
   </nav>
 
+  <!-- app section  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 mx-auto weather">
+        
+          <div class="d-flex flex-column ">
+            <p id="location"></p>
+            <div class="col-6 text-center mx-auto">
+              <span id="stringWeather"></span>			
+            </div>							
+            <div id="description" class="col-6 text-center mx-auto">
+              <img id="icon">
+              <p id="desc"></p>			
+            </div>	
+          </div>
+          
+          <div class="weather-body ">					
+            <div class="row">
+              <div class="humidity col-4 text-center d-flex flex-column py-2">
+                  <i class="fas fa-umbrella d-inline-block"></i>
+                  <span class="d-inline-block"> Vlaznost</span>
+              </div>
+              <div class="wind col-4 text-center d-flex flex-column py-2">
+                <i class="fas fa-wind d-inline-block"></i>
+                <span class="d-inline-block"> Vetar</span>
+              </div>
+              <div class="cloudiness col-4 text-center d-flex flex-column py-2">
+                <i class="fas fa-cloud d-inline-block"></i>
+                <span class="d-inline-block"> Oblacnost</span>
+              </div>				
+            </div>
+            
+            <div class="row">
+              <div id="humidity" class="col-4 text-center"></div>
+              <div id="wind" class="col-4 text-center"></div>	
+              <div id="cloudiness" class="col-4 text-center"></div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
