@@ -48,5 +48,9 @@ body {
   color: #fff; 
 }
 
+#pills-polaznici {
+  min-height: 500px;
+}
+
 
 
