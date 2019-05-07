@@ -27,7 +27,7 @@ if (!id || localStorage.getItem('polaznici') === null) {
 
 // Event listeneri
 document.getElementById('loginBtn').addEventListener('click', login);
-document.getElementById('emailLog').addEventListener('blur', validateEmail);
+document.getElementById('emailLog').addEventListener('blur', () => {validateEmail('emailLog')});
 document.getElementById('pass').addEventListener('blur', validatePass);
 document.getElementById('ime').addEventListener('blur', () => {validateText('ime')});
 document.getElementById('prezime').addEventListener('blur', () => {validateText('prezime')});
